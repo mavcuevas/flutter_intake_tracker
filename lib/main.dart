@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -69,7 +76,7 @@ class MyHomePage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-                top: kToolbarHeight + 30.0, // Add some space below the app bar
+                top: kToolbarHeight + 80.0, // Add some space below the app bar
                 left: 50.0), // Add some space on the left side
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
