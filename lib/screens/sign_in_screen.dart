@@ -29,7 +29,7 @@ class _SignInPageState extends State<SignInPage> {
         ),
         child: Center(
           child: Container(
-            width: 400.0, // Adjust the width of the card as needed
+            width: 300.0, // Adjust the width of the card as needed
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -75,7 +75,32 @@ class _SignInPageState extends State<SignInPage> {
                       ElevatedButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            // Handle sign-in logic
+                            // Placeholder implementation for sign-in process
+                            // Replace this with your actual sign-in logic
+                            final email = _emailController.text;
+                            final password = _passwordController.text;
+
+                            // Perform the sign-in process using the entered email and password
+                            try {
+                              // Replace this with your actual sign-in code
+                              await FirebaseAuth.instance
+                                  .signInWithEmailAndPassword(
+                                email: email,
+                                password: password,
+                              );
+
+                              // Sign-in successful, navigate to the next screen
+                              Navigator.pushReplacementNamed(
+                                  context, Routes.adminDashboardScreen);
+                            } catch (e) {
+                              // Sign-in failed, display an error message
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                      'Sign-in failed. Please check your credentials.'),
+                                ),
+                              );
+                            }
                           }
                         },
                         style: ButtonStyle(
