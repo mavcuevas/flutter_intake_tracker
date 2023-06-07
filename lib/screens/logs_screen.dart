@@ -22,26 +22,34 @@ class _LogsScreenState extends State<LogsScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        decoration: const InputDecoration(
-                          labelText: 'User Name',
-                        ),
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 8.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Add logic for adding a new user
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      minimumSize:
+                          Size(120, 40), // Adjust the button size as needed
+                    ),
+                    child: Text(
+                      'Add New User',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.black,
                       ),
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Register Fingerprint'),
+              ],
             ),
             SizedBox(height: 16),
             Card(

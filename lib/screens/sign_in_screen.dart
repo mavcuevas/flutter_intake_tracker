@@ -17,8 +17,11 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text('💧 Water Intake Tracker'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -29,7 +32,7 @@ class _SignInPageState extends State<SignInPage> {
         ),
         child: Center(
           child: Container(
-            width: 300.0, // Adjust the width of the card as needed
+            width: 400.0, // Adjust the width of the card as needed
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -116,6 +119,27 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: const Color.fromARGB(255, 112, 202, 209),
+        elevation: 0,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('💧 Water Intake Tracker'),
+              ),
+              Text('WaterIntakeTracker @ 2023. All rights reserved.'),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Contact Us'),
+              ),
+            ],
           ),
         ),
       ),

@@ -12,52 +12,29 @@ class NotificationsScreen extends StatefulWidget {
 }
 
 class _NotificationsScreenState extends State<NotificationsScreen> {
+  List<String> notifications = [
+    'Notification 1',
+    'Notification 2',
+    'Notification 3',
+    'Notification 4',
+    'Notification 5',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Logs'),
+        title: Text('Notifications'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        decoration: const InputDecoration(
-                          labelText: 'User Name',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+      body: ListView.builder(
+        itemCount: notifications.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(notifications[index]),
             ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Register Fingerprint'),
-            ),
-            SizedBox(height: 16),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Text('User ID:'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
